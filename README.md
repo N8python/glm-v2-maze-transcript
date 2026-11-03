@@ -6,6 +6,8 @@ The model reconstructed and verified the maze using movement commands, wrote the
 
 ## Read the transcript
 
+**[Open the live interactive viewer](https://n8python.github.io/glm-v2-maze-transcript/)** — hosted on GitHub Pages.
+
 - **[Complete transcript in Markdown](transcript.md)** — all 57 structured messages rendered for GitHub, including full recorded reasoning and tool exchanges.
 - **[Interactive viewer](viewer.html)** — download and open locally; a self-contained HTML file with search, annotated milestones, submission comparison, movement replays, timing, and artifacts. GitHub's file view displays source rather than running the HTML.
 - [Simple HTML transcript](transcript.html) — download and open locally.
