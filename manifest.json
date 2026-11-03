@@ -1,0 +1,71 @@
+{
+  "started_at": "2026-11-03T03:24:07.609568+00:00",
+  "host": "alice",
+  "agent_container": "maze-v2-workspace",
+  "service_container": "maze-v2-service",
+  "settings": {
+    "model": "GLM-5.3-Flash-EXL3",
+    "reasoning_effort": "max",
+    "chat_template_kwargs": {
+      "enable_thinking": true
+    },
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "seed": 20261102,
+    "max_tokens": 32768,
+    "stream": true,
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "bash",
+          "description": "Execute a bash command in your workspace. New commands start in /home/agent_0. A running command returns session_id; continue it by supplying that session_id and optional stdin, including a newline to submit an input line. Omit command when continuing a session. Poll with session_id and empty stdin. Sessions preserve running processes; separate commands do not preserve shell cd.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "command": {
+                "type": "string"
+              },
+              "session_id": {
+                "type": "string"
+              },
+              "stdin": {
+                "type": "string"
+              },
+              "yield_time_ms": {
+                "type": "integer",
+                "minimum": 100,
+                "maximum": 10000
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "agent_image": "sha256:ada03fa319265e625cdfd84304fc4ff06ca2eff2b5b5e9cf34e3e3947c123462",
+  "service_image": "sha256:f983f143dc591f9f8955a35dcf4ad6da85e970a9a8cd816838a03986f7a5d752",
+  "max_turns": 64,
+  "max_seconds": 1800,
+  "max_completion_tokens_total": 131072,
+  "protocol": "Fresh conversation, minimal prompt, no forced grader exposure, no retries or intervention, no external scoring.",
+  "source_sha256": {
+    "runtime/transport.py": "b78500fb086d596efac8596424cc27f5178d077bec1b85e959de96947399da89",
+    "runtime/README.md": "e4c1bb740a9879d99abaeec11ab7a934319fc74beb484b8620fd38b6cc055983",
+    "runtime/check_agent.py": "1a2522635e3e42221f0569c6ec91582bfe6783d283a18738749167195bf0afb2",
+    "runtime/run_rollout.py": "152f031929edf5368632bd3988aab1aaf86a6c5bcbd1ea663759c70522f9f33e",
+    "runtime/manage.py": "bcc9125cd7a8f8543b6666d0137d3a30809651f3a336f4650a3bce67f020d434",
+    "agent/grader.py": "c8132bfde4469fb4ac69ee560c041e6f05cd14b67c6d8fa6ea62aaa66d1b2a86",
+    "agent/instructions.md": "5bcb7dff41090e4c922394e32d5c691941d6999dbe4ba45607dead1e76f94891",
+    "runtime/server/maze_server.py": "70afdecd396060bc1ec24219f8baa4db4dcff5820c8e9d9474c2c7f542a85ef5",
+    "runtime/server/Dockerfile": "cb815d1320505441299765b77dfdd066508ffb9c1d8ccc2e01c0efa3c53d50aa",
+    "runtime/agent/Dockerfile": "e8e76cd778b6ca7c267fdbd93fae88badf2d86a0c4108d049106f8bcd00c5ab6",
+    "runtime/agent/maze_client.py": "60c2f7fd20cdf7084b41ac84c33ef9c8939ad18257aee33c292fddbcb09fb1bc",
+    "runtime/agent/maze_game.sh": "ec30c35c3cf134041d78f92318cb9b64c4111b873df50863b0cb3dc63de05075"
+  }
+}
